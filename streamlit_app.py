@@ -29,7 +29,7 @@ selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
 
 id=curr_list[curr_list['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
 ids=str(int(id))
-st.text([id])
+st.text(ids)
 
 url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
