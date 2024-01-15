@@ -9,7 +9,7 @@ from pandas import json_normalize
 @st.cache_data
 def get_ninja(url):
     r = requests.get(url)
-    pd_json = json_normalize(r.json()),record_path='lines')    
+    pd_json = json_normalize(r.json(),record_path='lines')  
     return pd_json
 
 @st.cache_data
