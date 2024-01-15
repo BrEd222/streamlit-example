@@ -4,7 +4,7 @@ import numpy as np
 import urllib.request, json 
 import requests
 from pandas import json_normalize
-import plotly.express as px
+import plotly.figure_factory as ff
 
 
 @st.cache_data
@@ -41,7 +41,7 @@ st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 y = curr_hist['value'].values
 x = np.linspace(1,len(y))
 
-fig = px.line([x,y], x="year", y="lifeExp", title='Life expectancy in Canada')
+fig = ff.line([x,y], x="year", y="lifeExp", title='Life expectancy in Canada')
 fig.show()
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
