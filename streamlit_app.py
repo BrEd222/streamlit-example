@@ -8,8 +8,8 @@ from pandas import json_normalize
 
 @st.cache_data
 def get_ninja(url):
-    data_json = requests.get(url)
-    pd_json = json_normalize(data_json,record_path='lines')    
+    r = requests.get(url)
+    pd_json = json_normalize(r.json(),record_path='lines')    
     return pd_json
 
 
