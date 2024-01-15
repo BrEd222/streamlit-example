@@ -4,11 +4,13 @@ import numpy as np
 import urllib.request, json 
 
 st.title('Test Grafico POE')
-@st.cache_data
-with urllib.request.urlopen("https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932") as url:
-    poe_data = json.load(url)
-poedf=pandas.DataFrame(poe_data)
-st.bar_chart(poedf.value)
+url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
+data_json = requests.get(url)
+#print(data_json.json())
+
+poedf=pd.DataFrame(data_json.json())
+#print(poedf['value'])
+st.bar_chart(poedf['value'])
 
 
 
