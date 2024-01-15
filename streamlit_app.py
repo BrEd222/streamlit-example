@@ -35,7 +35,7 @@ url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type
 
 curr_hist = ninja_cur_hist(url_history)
 #st.bar_chart(curr_hist['value'])
-st.line_chart(curr_hist['value'],x="Chaos Equivalent",y="Giorno di Lega")
+st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
