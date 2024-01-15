@@ -23,4 +23,4 @@ data_json = r.json()
 pd_json = json_normalize(data_json,record_path='lines')
 
 selection = st.selectbox('Select', pd_json['currencyTypeName'].values)
-st.text([pd_json['currencyTypeName'].values[selection]])
+st.text([selection])
