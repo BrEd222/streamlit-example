@@ -39,7 +39,7 @@ st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 
 
 st.vega_lite_chart(
-   curr_hist.drop['count'],
+   curr_hist.drop(columns=['count']),
    {
        "mark": {"type": "line","interpolate": "step-after", "tooltip": True},
        "encoding": {
