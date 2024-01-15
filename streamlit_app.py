@@ -4,6 +4,7 @@ import numpy as np
 import urllib.request, json 
 import requests
 from pandas import json_normalize
+import plotly.express as px
 
 
 @st.cache_data
