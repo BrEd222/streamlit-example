@@ -24,7 +24,7 @@ url = "https://poe.ninja/api/data/currencyoverview?league=Affliction&type=Curren
 curr_list = get_ninja(url)
 #print(data_json)
 
-selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
+selection = st.selectbox('Currency', curr_list['currencyTypeName'].values)
 #st.text([selection])
 
 id=curr_list[curr_list['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
@@ -34,7 +34,9 @@ st.text(ids)
 url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
 curr_hist = ninja_cur_hist(url_history)
-st.bar_chart(curr_hist['value'])
+#st.bar_chart(curr_hist['value'])
+st.line_chart(curr_hist['value'],x="Chaos Equivalent",y="Giorno di Lega")
+
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 
