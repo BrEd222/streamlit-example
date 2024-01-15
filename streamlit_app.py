@@ -37,17 +37,9 @@ curr_hist = ninja_cur_hist(url_history)
 #st.bar_chart(curr_hist['value'])
 st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 
-
-st.vega_lite_chart(
-   curr_hist.drop(columns=['count']),
-   {
-       "mark": {"type": "line","interpolate": "step-after", "tooltip": True},
-       "encoding": {
-           "x": {"field": "Giorni di Lega", "type": "quantitative"},
-           "y": {"field": "Chaos Equivalent", "type": "quantitative"},
-       },
-   },
-)
+pd.options.plotting.backend = "plotly"
+fig = curr_hist.plot()
+fig.show()
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 
