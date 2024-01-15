@@ -16,7 +16,7 @@ def get_ninja(url):
 st.title('Test Grafico POE')
 
 url = "https://poe.ninja/api/data/currencyoverview?league=Affliction&type=Currency"
-curr_list = get_ninja(url)
+#curr_list = get_ninja(url)
 #print(data_json)
 
 #selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
