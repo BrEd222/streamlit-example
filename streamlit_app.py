@@ -36,8 +36,18 @@ url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type
 curr_hist = ninja_cur_hist(url_history)
 #st.bar_chart(curr_hist['value'])
 st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
-fig = curr_hist.plot.bar()
-st.plotly_chart(fig, use_container_width=True)
+
+
+st.vega_lite_chart(
+   curr_hist['value'],
+   {
+       "mark": {"type": "line","interpolate": "step-after", "tooltip": True},
+       "encoding": {
+           "x": {"field": "Giorni di Lega", "type": "quantitative"},
+           "y": {"field": "Chaos Equivalent", "type": "quantitative"},
+       },
+   },
+)
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 
