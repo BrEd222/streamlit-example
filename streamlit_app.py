@@ -37,8 +37,11 @@ curr_hist = ninja_cur_hist(url_history)
 #st.bar_chart(curr_hist['value'])
 st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 
-pd.options.plotting.backend = "plotly"
-fig = curr_hist.plot()
+y = curr_hist['value'].values
+x = linspace(1,len(y))
+
+df = px.data.gapminder().query("country=='Canada'")
+fig = px.line([x,y]], x="year", y="lifeExp", title='Life expectancy in Canada')
 fig.show()
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
