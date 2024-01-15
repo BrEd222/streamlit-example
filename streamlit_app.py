@@ -19,9 +19,7 @@ url = "https://poe.ninja/api/data/currencyoverview?league=Affliction&type=Curren
 curr_list = get_ninja(url)
 #print(data_json)
 
-curr_list = json_normalize(curr_list,record_path='lines')
-
-selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
+#selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
 #st.text([selection])
 
 #id=pd_json[pd_json['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
