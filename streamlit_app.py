@@ -10,13 +10,12 @@ from pandas import json_normalize
 def get_ninja(url):
     data_json = requests.get(url)
     pd_json = json_normalize(data_json,record_path='lines')    
-    return data
+    return pd_json
 
 
 st.title('Test Grafico POE')
 
 url = "https://poe.ninja/api/data/currencyoverview?league=Affliction&type=Currency"
-r = requests.get(url)
 curr_list = get_ninja(url)
 #print(data_json)
 
