@@ -6,7 +6,6 @@ import requests
 
 
 st.title('Test Grafico POE')
-@st.cache_data
 url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 data_json = requests.get(url)
 #print(data_json.json())
