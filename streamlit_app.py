@@ -30,7 +30,7 @@ ids=str(int(id))
 
 url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
-curr_hist = get_ninja(url_history)
+#curr_hist = get_ninja(url_history)
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 
