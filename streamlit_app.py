@@ -35,7 +35,7 @@ url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type
 
 curr_hist = ninja_cur_hist(url_history)
 #st.bar_chart(curr_hist['value'])
-st.line_chart(curr_hist['value'],x="Chaos Equivalent",y="Giorno di Lega")
+st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 
 pd.options.plotting.backend = "plotly"
 fig = curr_hist.plot()
