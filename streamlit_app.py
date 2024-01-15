@@ -40,7 +40,6 @@ st.line_chart(curr_hist['value'])#,x="Chaos Equivalent",y="Giorno di Lega")
 y = curr_hist['value'].values
 x = np.linspace(1,len(y))
 
-df = px.data.gapminder().query("country=='Canada'")
 fig = px.line([x,y], x="year", y="lifeExp", title='Life expectancy in Canada')
 fig.show()
 
