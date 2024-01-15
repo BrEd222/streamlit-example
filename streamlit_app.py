@@ -40,4 +40,4 @@ curr_hist = get_ninja(url_history)
 #Currency history
 #https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId=22
 
-st.bar_chart(curr_hist['value'])
+#st.bar_chart(curr_hist['value'])
