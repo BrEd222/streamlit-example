@@ -25,7 +25,7 @@ curr_list = get_ninja(url)
 #print(data_json)
 
 selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
-st.text([selection])
+#st.text([selection])
 
 id=curr_list[curr_list['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
 ids=str(int(id))
