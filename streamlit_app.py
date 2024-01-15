@@ -9,9 +9,14 @@ from pandas import json_normalize
 @st.cache_data
 def get_ninja(url):
     r = requests.get(url)
-    pd_json = json_normalize(r.json())#,record_path='lines')    
+    pd_json = json_normalize(r.json()),record_path='lines')    
     return pd_json
 
+@st.cache_data
+def ninja_cur_hist(url):
+    r = requests.get(url)
+    pd_json = json_normalize(r.json()),record_path='payCurrencyGraphData')    
+    return pd_json
 
 st.title('Test Grafico POE')
 
@@ -27,7 +32,7 @@ ids=str(int(id))
 
 url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
-curr_hist = get_ninja(url_history)
+curr_hist = ninja_cur_hist(url_history)
 st.bar_chart(curr_hist['value'])
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
