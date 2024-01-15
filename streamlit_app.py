@@ -15,7 +15,7 @@ def get_ninja(url):
 @st.cache_data
 def ninja_cur_hist(url):
     r = requests.get(url)
-    pd_json = json_normalize(r.json()),record_path='payCurrencyGraphData')    
+    pd_json = json_normalize(r.json(),record_path='payCurrencyGraphData')    
     return pd_json
 
 st.title('Test Grafico POE')
