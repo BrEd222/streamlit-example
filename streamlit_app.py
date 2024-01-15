@@ -25,7 +25,7 @@ st.text([selection])
 id=curr_list[curr_list['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
 ids=str(int(id))
 
-#url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
+url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
 #curr_hist = get_ninja(url_history)
 
