@@ -22,8 +22,8 @@ curr_list = get_ninja(url)
 selection = st.selectbox('Select', curr_list['currencyTypeName'].values)
 st.text([selection])
 
-#id=pd_json[pd_json['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
-#ids=str(int(id))
+id=pd_json[pd_json['currencyTypeName']==selection]['pay.pay_currency_id'].values[0]
+ids=str(int(id))
 
 #url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
