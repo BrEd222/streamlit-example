@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import urllib.request, json 
+import requests
+
 
 st.title('Test Grafico POE')
 url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
