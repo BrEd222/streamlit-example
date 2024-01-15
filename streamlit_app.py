@@ -1,6 +1,17 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import urllib.request, json 
+
+st.title('Test Grafico POE')
+@st.cache_data
+with urllib.request.urlopen("https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932") as url:
+    poe_data = json.load(url)
+poedf=pandas.DataFrame(poe_data)
+st.bar_chart(poedf.value)
+
+
+
 
 st.title('Uber pickups in NYC')
 
