@@ -27,7 +27,8 @@ ids=str(int(id))
 
 url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId='+ids
 
-#curr_hist = get_ninja(url_history)
+curr_hist = get_ninja(url_history)
+st.bar_chart(curr_hist['value'])
 
 #url = "https://poe.ninja/api/data/itemhistory?league=Affliction&type=UniqueFlask&itemId=20932"
 
@@ -37,4 +38,3 @@ url_history = 'https://poe.ninja/api/data/currencyhistory?league=Affliction&type
 #Currency history
 #https://poe.ninja/api/data/currencyhistory?league=Affliction&type=Currency&currencyId=22
 
-#st.bar_chart(curr_hist['value'])
